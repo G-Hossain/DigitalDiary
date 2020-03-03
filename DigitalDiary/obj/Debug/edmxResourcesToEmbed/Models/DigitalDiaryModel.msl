@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DigitalDiaryModelStoreContainer" CdmEntityContainer="DigitalDiaryDataContext">
+    <EntitySetMapping Name="Memories">
+      <EntityTypeMapping TypeName="DigitalDiaryModel.Memory">
+        <MappingFragment StoreEntitySet="Memories">
+          <ScalarProperty Name="memoryid" ColumnName="memoryid" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="imagepath" ColumnName="imagepath" />
+          <ScalarProperty Name="experience" ColumnName="experience" />
+          <ScalarProperty Name="thoughts" ColumnName="thoughts" />
+          <ScalarProperty Name="comments" ColumnName="comments" />
+          <ScalarProperty Name="modifydate" ColumnName="modifydate" />
+          <ScalarProperty Name="importance" ColumnName="importance" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="DigitalDiaryModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

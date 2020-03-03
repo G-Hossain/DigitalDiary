@@ -1,0 +1,82 @@
+﻿@model IEnumerable<DigitalDiary.Models.Memory>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Memories</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    @Html.ActionLink("Log Out", "LogOut", "LogIn")
+    <table class="table" border="2">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.date)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.imagepath)
+                </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.experience)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.thoughts)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.comments)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.modifydate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.importance)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.User.name)
+                </th>*@
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.date)
+                </td>
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.imagepath)
+                </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.experience)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.thoughts)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.comments)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.modifydate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.importance)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.memoryid }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.memoryid }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.memoryid })
+                </td>
+            </tr>
+        }
+
+    </table>
+</body>
+</html>
